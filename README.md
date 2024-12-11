@@ -1,0 +1,2 @@
+# one4all_services
+ One4All is a Django-based web application designed to bridge the gap between customers and service providers. The platform allows users to register as customers or service providers, facilitating seamless booking and management of various services.  Key Features: Customer and service provider registration and profiles Location-based service provider search Easy service booking with real-time notifications Comprehensive dashboard for managing bookings and profiles
