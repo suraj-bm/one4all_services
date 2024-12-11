@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile | ZETAONE</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-100">
+    <div class="flex items-center justify-center min-h-screen">
+        <div class="bg-white shadow-lg rounded-lg w-full max-w-2xl p-8">
+            <h2 class="text-3xl font-bold text-center text-blue-600">Your Profile</h2>
+            <p class="mt-2 text-center text-gray-600">Manage your account details</p>
+
+            <div class="mt-6 space-y-6">
+                <!-- Profile Picture -->
+                <div class="text-center">
+                    <img src="/path_to_default_profile_picture.jpg" alt="Profile Picture"
+                        class="w-24 h-24 rounded-full mx-auto border-4 border-blue-600">
+                    <button class="mt-4 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">
+                        Change Picture
+                    </button>
+                </div>
+
+                <!-- User Details -->
+                <div>
+                    <label for="name" class="block text-sm font-medium text-gray-700">Full Name</label>
+                    <input type="text" id="name" name="name" value="John Doe" required
+                        class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                </div>
+
+                <div>
+                    <label for="email" class="block text-sm font-medium text-gray-700">Email Address</label>
+                    <input type="email" id="email" name="email" value="johndoe@example.com" required
+                        class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                </div>
+
+                <div>
+                    <label for="role" class="block text-sm font-medium text-gray-700">Role</label>
+                    <input type="text" id="role" name="role" value="Customer" disabled
+                        class="mt-1 block w-full px-4 py-2 bg-gray-100 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                </div>
+
+                <!-- Update Password -->
+                <div>
+                    <label for="password" class="block text-sm font-medium text-gray-700">Change Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter new password"
+                        class="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500">
+                </div>
+
+                <!-- Update Button -->
+                <div class="mt-6">
+                    <button type="submit"
+                        class="w-full bg-blue-600 text-white py-2 px-4 rounded-lg shadow-md hover:bg-blue-700 focus:ring-2 focus:ring-blue-500">
+                        Update Profile
+                    </button>
+                </div>
+            </div>
+
+            <p class="mt-4 text-center text-gray-600">
+                Need help? <a href="/support" class="text-blue-600 hover:underline">Contact Support</a>
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>

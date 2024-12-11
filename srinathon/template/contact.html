@@ -1,0 +1,129 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8 col-lg-6">
+      <div class="card border-0 shadow-lg rounded-4 overflow-hidden">
+        <div
+          class="card-header bg-gradient-primary text-white text-center py-4"
+        >
+          <h2 class="mb-0 fw-bold">
+            <i class="bi bi-envelope-paper me-2"></i>Contact Us
+          </h2>
+          <p class="text-white-50 mb-0 mt-2">
+            We're here to help and answer any question you might have
+          </p>
+        </div>
+        <div class="card-body p-5">
+          <form method="post" action="/contact/" class="contact-form">
+            {% csrf_token %}
+
+            <!-- Name Input -->
+            <div class="form-floating mb-3">
+              <input
+                type="text"
+                class="form-control rounded-3 shadow-sm"
+                id="name"
+                name="name"
+                placeholder="Your Full Name"
+                required
+              />
+              <label for="name" class="text-muted">Full Name</label>
+            </div>
+
+            <!-- Email Input -->
+            <div class="form-floating mb-3">
+              <input
+                type="email"
+                class="form-control rounded-3 shadow-sm"
+                id="email"
+                name="email"
+                placeholder="name@example.com"
+                required
+              />
+              <label for="email" class="text-muted">Email Address</label>
+            </div>
+
+            <!-- Subject Input -->
+            <div class="form-floating mb-3">
+              <input
+                type="text"
+                class="form-control rounded-3 shadow-sm"
+                id="subject"
+                name="subject"
+                placeholder="Subject of Your Message"
+                required
+              />
+              <label for="subject" class="text-muted">Subject</label>
+            </div>
+
+            <!-- Message Textarea -->
+            <div class="form-floating mb-4">
+              <textarea
+                class="form-control rounded-3 shadow-sm"
+                id="message"
+                name="message"
+                placeholder="Write your message here"
+                style="height: 150px"
+                required
+              ></textarea>
+              <label for="message" class="text-muted">Your Message</label>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="d-grid">
+              <button
+                type="submit"
+                class="btn btn-primary btn-lg rounded-3 shadow-sm hover-lift"
+              >
+                Send Message
+                <i class="bi bi-send ms-2"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <div class="card-footer bg-light text-center py-4">
+          <p class="mb-2 text-muted">
+            Need immediate assistance?
+            <a href="mailto:support@zetaone.com" class="text-primary fw-bold">
+              Email us directly
+            </a>
+          </p>
+          <div class="mt-3">
+            <a href="/" class="btn btn-outline-secondary btn-sm rounded-3">
+              <i class="bi bi-arrow-left me-1"></i>
+              Back to Home
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Custom Styles */
+  .bg-gradient-primary {
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  }
+
+  .hover-lift {
+    transition: transform 0.3s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-5px);
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    transition: all 0.3s ease;
+  }
+
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    box-shadow: 0 0 0 0.25rem rgba(37, 117, 252, 0.25) !important;
+    border-color: #2575fc;
+  }
+</style>
+{% endblock %}

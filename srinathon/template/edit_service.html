@@ -1,0 +1,67 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container mt-5">
+  <h2 class="display-4 text-center mb-5">{{ title }}</h2>
+
+  <!-- Form to Add or Edit Service -->
+  <form
+    action="{% if service %}/service/edit/{{ service.id }}{% else %}/service/add/{% endif %}"
+    method="POST"
+  >
+    {% csrf_token %}
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Service Information</h5>
+        <p class="card-text">Fill out the form to add or edit a service.</p>
+
+        <!-- Form Fields from ServiceForm -->
+        <div class="mb-3">
+          <label for="{{ form.name.id_for_label }}" class="form-label"
+            >Service Name</label
+          >
+          {{ form.name }}
+          <!-- Renders the input field for service name -->
+        </div>
+
+        <div class="mb-3">
+          <label for="{{ form.category.id_for_label }}" class="form-label"
+            >Category</label
+          >
+          {{ form.category }}
+          <!-- Renders the select field for category -->
+        </div>
+
+        <div class="mb-3">
+          <label for="{{ form.description.id_for_label }}" class="form-label"
+            >Description</label
+          >
+          {{ form.description }}
+          <!-- Renders the textarea for description -->
+        </div>
+
+        <div class="mb-3">
+          <label for="{{ form.price.id_for_label }}" class="form-label"
+            >Price</label
+          >
+          {{ form.price }}
+          <!-- Renders the input field for price -->
+        </div>
+
+        <div class="mb-3">
+          <label for="{{ form.location.id_for_label }}" class="form-label"
+            >Location</label
+          >
+          {{ form.location }}
+          <!-- Renders the input field for location -->
+        </div>
+
+        <!-- Submit Button -->
+        <div class="d-flex justify-content-center">
+          <button type="submit" class="btn btn-primary btn-lg">
+            {% if service %}Update Service{% else %}Add Service{% endif %}
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+{% endblock %}

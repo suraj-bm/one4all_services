@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nearby Service Providers</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        #map {
+            height: 400px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8">
+        <!-- Header -->
+        <h1 class="text-4xl font-bold text-blue-600 text-center mb-6">Nearby Service Providers</h1>
+
+        <!-- Map Section -->
+        <div class="bg-white shadow-md rounded-lg p-6">
+            <p class="text-gray-700 text-center mb-4">View service providers near your location.</p>
+            <div id="map"></div>
+        </div>
+
+        <!-- Providers List -->
+        <div class="mt-6 bg-white shadow-md rounded-lg p-6">
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Available Providers</h2>
+            <ul id="providers-list" class="space-y-4">
+                <!-- Dynamic provider items will be inserted here -->
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Sample data for service providers (to be replaced with backend integration)
+        const providers = [
+            { name: "John's Plumbing", lat: 28.7041, lng: 77.1040, contact: "9876543210" },
+            { name: "Electric Fixers", lat: 28.7080, lng: 77.1025, contact: "9876543220" },
+            { name: "AC Service Experts", lat: 28.7020, lng: 77.1000, contact: "9876543230" },
+        ];
+
+        function initMap() {
+            const userLocation = { lat: 28.7041, lng: 77.1025 }; // Example user location (Delhi, India)
+            const map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 13,
+                center: userLocation,
+            });
+
+            // Add user marker
+            new google.maps.Marker({
+                position: userLocation,
+                map: map,
+                title: "Your Location",
+                icon: "http://maps.google.com/mapfiles/ms/icons/blue-dot.png",
+            });
+
+            // Display providers on the map and list
+            const providersList = document.getElementById('providers-list');
+            providers.forEach((provider) => {
+                // Add marker on map
+                const marker = new google.maps.Marker({
+                    position: { lat: provider.lat, lng: provider.lng },
+                    map: map,
+                    title: provider.name,
+                });
+
+                // Add provider to list
+                const listItem = document.createElement('li');
+                listItem.classList.add('border', 'p-4', 'rounded-lg', 'shadow-md', 'hover:shadow-lg', 'transition');
+                listItem.innerHTML = `
+                    <h3 class="text-lg font-semibold text-gray-800">${provider.name}</h3>
+                    <p class="text-gray-600">Contact: ${provider.contact}</p>
+                `;
+                providersList.appendChild(listItem);
+
+                // Zoom in on marker click
+                marker.addListener('click', () => {
+                    map.setZoom(15);
+                    map.setCenter(marker.getPosition());
+                });
+            });
+        }
+    </script>
+
+    <!-- Google Maps API -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
+</body>
+</html>

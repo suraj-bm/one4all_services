@@ -1,0 +1,210 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container-fluid px-4 py-5">
+  <div class="row">
+    <div class="col-12">
+      <h1 class="display-4 text-center mb-5 text-primary fw-bold">
+        <i class="bi bi-tools me-3"></i>Our Professional Services
+      </h1>
+    </div>
+  </div>
+
+  <!-- Filtering and Sorting Options -->
+  <div class="row mb-5">
+    <div class="col-md-6 mb-3 mb-md-0">
+      <div class="input-group">
+        <span class="input-group-text bg-light">
+          <i class="bi bi-filter"></i>
+        </span>
+        <select class="form-select" aria-label="Select Category">
+          <option selected>All Categories</option>
+          <option value="1">Electrical</option>
+          <option value="2">Plumbing</option>
+          <option value="3">Cleaning</option>
+          <option value="4">Carpentry</option>
+          <option value="5">Pest Control</option>
+        </select>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="input-group">
+        <span class="input-group-text bg-light">
+          <i class="bi bi-sort-down"></i>
+        </span>
+        <select class="form-select" aria-label="Sort by">
+          <option selected>Sort Options</option>
+          <option value="1">Price: Low to High</option>
+          <option value="2">Price: High to Low</option>
+          <option value="3">Top Rated</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <!-- Services List -->
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <!-- Service Card 1 -->
+    <div class="col">
+      <div class="card h-100 border-0 shadow-lg hover-lift">
+        <div class="position-relative">
+          <img
+            src="https://th.bing.com/th/id/OIP.iwk9fGl5sVgbofFP0FhKBgHaHa?w=1536&h=1536&rs=1&pid=ImgDetMain"
+            class="card-img-top"
+            alt="Electrical Service"
+            style="height: 250px; object-fit: cover"
+          />
+          <div class="badge bg-primary position-absolute top-0 end-0 m-3">
+            Popular
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h5 class="card-title mb-0 text-primary">
+              <i class="bi bi-plug me-2"></i>Electrical Service
+            </h5>
+            <span class="badge bg-light text-dark">$50/hr</span>
+          </div>
+          <p class="card-text text-muted">
+            Expert electricians providing comprehensive electrical repairs,
+            installations, and safety inspections for residential and commercial
+            spaces.
+          </p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="text-warning">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-half"></i>
+            </div>
+            <a href="/services/electrical" class="btn btn-outline-primary">
+              Book Now <i class="bi bi-arrow-right ms-2"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Service Card 2 -->
+    <div class="col">
+      <div class="card h-100 border-0 shadow-lg hover-lift">
+        <div class="position-relative">
+          <img
+            src="https://thumbs.dreamstime.com/z/plumbing-service-concept-repairman-plumber-work-professional-repair-cleaning-pipeline-bathroom-equipment-flat-199033511.jpg"
+            class="card-img-top"
+            alt="Plumbing Service"
+            style="height: 250px; object-fit: cover"
+          />
+          <div class="badge bg-success position-absolute top-0 end-0 m-3">
+            24/7 Support
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h5 class="card-title mb-0 text-primary">
+              <i class="bi bi-water me-2"></i>Plumbing Service
+            </h5>
+            <span class="badge bg-light text-dark">$40/hr</span>
+          </div>
+          <p class="card-text text-muted">
+            Professional plumbers tackling everything from minor leaks to major
+            pipe replacements with precision and care.
+          </p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="text-warning">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star"></i>
+            </div>
+            <a href="/booking" class="btn btn-outline-primary">
+              Book Now <i class="bi bi-arrow-right ms-2"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Service Card 3 -->
+    <div class="col">
+      <div class="card h-100 border-0 shadow-lg hover-lift">
+        <div class="position-relative">
+          <img
+            src="https://th.bing.com/th/id/OIP._noXsDT27S7r3eEXmmo7UwHaGg?rs=1&pid=ImgDetMain"
+            class="card-img-top"
+            alt="Cleaning Service"
+            style="height: 250px; object-fit: cover"
+          />
+          <div class="badge bg-info position-absolute top-0 end-0 m-3">
+            Best Value
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h5 class="card-title mb-0 text-primary">
+              <i class="bi bi-sparkle me-2"></i>Cleaning Service
+            </h5>
+            <span class="badge bg-light text-dark">$30/hr</span>
+          </div>
+          <p class="card-text text-muted">
+            Thorough cleaning services that transform your space, ensuring a
+            spotless and refreshed environment every time.
+          </p>
+          <div class="d-flex justify-content-between align-items-center">
+            <div class="text-warning">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-half"></i>
+              <i class="bi bi-star"></i>
+            </div>
+            <a href="/services/cleaning" class="btn btn-outline-primary">
+              Book Now <i class="bi bi-arrow-right ms-2"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Pagination -->
+  <div class="row mt-5">
+    <div class="col-12 d-flex justify-content-center">
+      <nav aria-label="Service pages navigation">
+        <ul class="pagination shadow-sm">
+          <li class="page-item disabled">
+            <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
+              <i class="bi bi-chevron-left"></i>
+            </a>
+          </li>
+          <li class="page-item active" aria-current="page">
+            <a class="page-link" href="#">1</a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="#">2</a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="#">3</a>
+          </li>
+          <li class="page-item">
+            <a class="page-link" href="#">
+              <i class="bi bi-chevron-right"></i>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+<!-- Optional Custom CSS -->
+<style>
+  .hover-lift {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  .hover-lift:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+  }
+</style>
+{% endblock %}

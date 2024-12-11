@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat and Consultation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        #chat-box {
+            height: 300px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8">
+        <!-- Chat Section -->
+        <div class="bg-white shadow-md rounded-lg p-6 mb-8">
+            <h1 class="text-4xl font-bold text-blue-600 text-center mb-6">In-App Chat</h1>
+            <div id="chat-box" class="border p-4 mb-4 bg-gray-50 rounded">
+                <!-- Chat messages will appear here -->
+                <div class="text-gray-800"><strong>Provider:</strong> Hello! How can I assist you today?</div>
+            </div>
+            <div class="flex">
+                <input type="text" id="chat-input" class="flex-grow px-4 py-2 border border-gray-300 rounded-l-lg" placeholder="Type your message...">
+                <button id="send-btn" class="bg-blue-600 text-white px-4 py-2 rounded-r-lg hover:bg-blue-700">Send</button>
+            </div>
+        </div>
+
+        <!-- Consultation Section -->
+        <div class="bg-white shadow-md rounded-lg p-6">
+            <h1 class="text-4xl font-bold text-blue-600 text-center mb-6">Consultation</h1>
+            <form id="consultation-form" class="space-y-4">
+                <div>
+                    <label for="consultation-topic" class="block text-gray-700 font-semibold mb-2">Consultation Topic</label>
+                    <input type="text" id="consultation-topic" class="w-full px-4 py-2 border border-gray-300 rounded-lg" placeholder="Enter your topic">
+                </div>
+                <div>
+                    <label for="consultation-details" class="block text-gray-700 font-semibold mb-2">Details</label>
+                    <textarea id="consultation-details" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded-lg" placeholder="Provide details about your consultation..."></textarea>
+                </div>
+                <div>
+                    <label for="consultation-date" class="block text-gray-700 font-semibold mb-2">Preferred Date</label>
+                    <input type="date" id="consultation-date" class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+                </div>
+                <button type="submit" class="w-full bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">Request Consultation</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Chat Functionality
+        const chatBox = document.getElementById('chat-box');
+        const chatInput = document.getElementById('chat-input');
+        const sendBtn = document.getElementById('send-btn');
+
+        sendBtn.addEventListener('click', () => {
+            const message = chatInput.value.trim();
+            if (message) {
+                const userMessage = document.createElement('div');
+                userMessage.classList.add('text-gray-800');
+                userMessage.innerHTML = `<strong>You:</strong> ${message}`;
+                chatBox.appendChild(userMessage);
+                chatBox.scrollTop = chatBox.scrollHeight; // Scroll to bottom
+                chatInput.value = '';
+
+                // Simulate provider response
+                setTimeout(() => {
+                    const providerResponse = document.createElement('div');
+                    providerResponse.classList.add('text-gray-800');
+                    providerResponse.innerHTML = `<strong>Provider:</strong> Thank you for reaching out!`;
+                    chatBox.appendChild(providerResponse);
+                    chatBox.scrollTop = chatBox.scrollHeight;
+                }, 1000);
+            }
+        });
+
+        // Consultation Form Functionality
+        const consultationForm = document.getElementById('consultation-form');
+        consultationForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const topic = document.getElementById('consultation-topic').value.trim();
+            const details = document.getElementById('consultation-details').value.trim();
+            const date = document.getElementById('consultation-date').value;
+
+            if (topic && details && date) {
+                alert(`Consultation Requested!\nTopic: ${topic}\nDetails: ${details}\nDate: ${date}`);
+                consultationForm.reset();
+            } else {
+                alert('Please fill in all fields.');
+            }
+        });
+    </script>
+</body>
+</html>

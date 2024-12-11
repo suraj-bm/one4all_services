@@ -1,0 +1,226 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container-fluid px-0">
+  <!-- Hero Section with Gradient Background -->
+  <div class="hero-section bg-primary text-white py-5">
+    <div class="container">
+      <div class="row justify-content-center text-center">
+        <div class="col-12 col-md-10 col-lg-8">
+          <h1 class="display-3 mb-3 fw-bold text-shadow">Welcome to ZETAONE</h1>
+          <p class="lead mb-4">
+            Your comprehensive solution for home and office services -
+            Professional, Reliable, and Just a Click Away!
+          </p>
+
+          <!-- Enhanced Search Bar -->
+          <div class="search-wrapper mb-4">
+            <div class="input-group input-group-lg">
+              <input
+                type="text"
+                class="form-control rounded-pill px-4"
+                placeholder="What service do you need today?"
+                id="search-bar"
+              />
+              <button
+                class="btn btn-light rounded-pill px-4 ms-2"
+                type="button"
+              >
+                <i class="bi bi-search me-2"></i>Search
+              </button>
+            </div>
+          </div>
+
+          <div>
+            <a href="/login/" class="btn btn-outline-light btn-lg me-3">
+              <i class="bi bi-person-fill me-2"></i>Login
+            </a>
+            <a href="/services/" class="btn btn-light btn-lg text-primary">
+              <i class="bi bi-grid-fill me-2"></i>Browse Services
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Service Categories Section -->
+  <div class="container py-5">
+    <div class="row text-center mb-4">
+      <div class="col-12">
+        <h2 class="display-6 fw-bold">Our Core Services</h2>
+        <p class="text-muted">Professional solutions for all your needs</p>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      <!-- Electrical Services -->
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-lg hover-lift">
+          <div class="card-img-top overflow-hidden">
+            <img
+              src="https://th.bing.com/th/id/OIP.iwk9fGl5sVgbofFP0FhKBgHaHa?w=1536&h=1536&rs=1&pid=ImgDetMain"
+              class="img-fluid w-100"
+              alt="Electrical Services"
+            />
+          </div>
+          <div class="card-body text-center">
+            <h5 class="card-title mb-3">Electrical Services</h5>
+            <p class="card-text text-muted mb-3">
+              Expert electricians for home and office electrical solutions.
+            </p>
+            <a href="/services/#electrical" class="btn btn-outline-primary">
+              Find Electricians
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Plumbing Services -->
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-lg hover-lift">
+          <div class="card-img-top overflow-hidden">
+            <img
+              src="https://thumbs.dreamstime.com/z/plumbing-service-concept-repairman-plumber-work-professional-repair-cleaning-pipeline-bathroom-equipment-flat-199033511.jpg"
+              class="img-fluid w-100"
+              alt="Plumbing Services"
+            />
+          </div>
+          <div class="card-body text-center">
+            <h5 class="card-title mb-3">Plumbing Services</h5>
+            <p class="card-text text-muted mb-3">
+              Professional plumbers to resolve all your water-related issues.
+            </p>
+            <a href="/services/#plumbing" class="btn btn-outline-primary">
+              Find Plumbers
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cleaning Services -->
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-lg hover-lift">
+          <div class="card-img-top overflow-hidden">
+            <img
+              src="https://finecert.com/wp-content/uploads/2022/02/iso-41001.jpg"
+              class="img-fluid w-100"
+              alt="Cleaning Services"
+            />
+          </div>
+          <div class="card-body text-center">
+            <h5 class="card-title mb-3">Cleaning Services</h5>
+            <p class="card-text text-muted mb-3">
+              Thorough and reliable cleaning for your space.
+            </p>
+            <a href="/services/#cleaning" class="btn btn-outline-primary">
+              Book Cleaning
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- More Categories Section -->
+  <div class="container py-5 bg-light">
+    <div class="row text-center mb-4">
+      <div class="col-12">
+        <h2 class="display-6 fw-bold">Explore More Services</h2>
+        <p class="text-muted">Comprehensive solutions for every need</p>
+      </div>
+    </div>
+
+    <div class="row g-4">
+      <!-- Carpentry Services -->
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-lg hover-lift">
+          <div class="card-img-top overflow-hidden">
+            <img
+              src="https://th.bing.com/th/id/OIP.3IRzTFfnR3WgP64XW40FVwHaHa?w=800&h=800&rs=1&pid=ImgDetMain"
+              class="img-fluid w-100"
+              alt="Carpentry Services"
+            />
+          </div>
+          <div class="card-body text-center">
+            <h5 class="card-title mb-3">Carpentry Services</h5>
+            <p class="card-text text-muted mb-3">
+              Skilled craftsmen for furniture and woodwork projects.
+            </p>
+            <a href="/services/#carpentry" class="btn btn-outline-primary">
+              Find Carpenters
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pest Control Services -->
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-lg hover-lift">
+          <div class="card-img-top overflow-hidden">
+            <img
+              src="https://th.bing.com/th/id/OIP.kCOlvU4jLQHDKdlBxywBTAHaHa?w=626&h=626&rs=1&pid=ImgDetMain"
+              class="img-fluid w-100"
+              alt="Pest Control Services"
+            />
+          </div>
+          <div class="card-body text-center">
+            <h5 class="card-title mb-3">Pest Control</h5>
+            <p class="card-text text-muted mb-3">
+              Comprehensive pest management for a clean environment.
+            </p>
+            <a href="/services/#pest-control" class="btn btn-outline-primary">
+              Schedule Inspection
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Home Appliance Repair -->
+      <div class="col-md-4">
+        <div class="card h-100 border-0 shadow-lg hover-lift">
+          <div class="card-img-top overflow-hidden">
+            <img
+              src="https://thumbs.dreamstime.com/z/professional-handyman-repairman-electrician-fixing-broken-oven-kitchen-vector-illustration-home-appliances-repair-service-170789395.jpg"
+              class="img-fluid w-100"
+              alt="Home Appliance Repair"
+            />
+          </div>
+          <div class="card-body text-center">
+            <h5 class="card-title mb-3">Home Appliance Repair</h5>
+            <p class="card-text text-muted mb-3">
+              Expert technicians for all your home appliance needs.
+            </p>
+            <a
+              href="/services/#home-appliance-repair"
+              class="btn btn-outline-primary"
+            >
+              Get Repair Help
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Optional: Include additional CSS for hover and shadow effects -->
+<style>
+  /* Custom hover effect */
+  .hover-lift {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  .hover-lift:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
+  }
+
+  /* Text shadow for hero section */
+  .text-shadow {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Gradient background for hero section */
+  .hero-section {
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  }
+</style>
+{% endblock %}

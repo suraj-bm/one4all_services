@@ -1,0 +1,63 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container mt-5">
+  <!-- Service Details Section -->
+  <div class="row">
+    <div class="col-md-6">
+      <!-- Service Image -->
+      <img src="path_to_image.jpg" class="img-fluid" alt="Service Image" />
+    </div>
+    <div class="col-md-6">
+      <!-- Service Information -->
+      <h2 class="display-5">Electrical Service</h2>
+      <p class="lead text-muted">
+        Professional electricians for all your electrical repairs and
+        installations.
+      </p>
+      <hr />
+      <h4 class="text-primary">Pricing</h4>
+      <p class="text-muted">$50 per hour</p>
+
+      <!-- Service Description -->
+      <h4 class="text-primary">Description</h4>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
+        viverra orci sed ante venenatis, ac tempor elit hendrerit. Nulla
+        facilisi. Integer viverra et nulla ut posuere. In ut velit sem. Integer
+        eget bibendum turpis. Integer quis turpis quis purus bibendum convallis.
+      </p>
+
+      <!-- Service Features -->
+      <h4 class="text-primary">Features</h4>
+      <ul>
+        <li>24/7 availability</li>
+        <li>Experienced professionals</li>
+        <li>Affordable pricing</li>
+        <li>Guaranteed satisfaction</li>
+      </ul>
+
+      <!-- Service Reviews -->
+      <h4 class="text-primary">Customer Reviews</h4>
+      <div class="mb-3">
+        <div class="d-flex">
+          <span class="me-2">★★★★☆</span>
+          <p class="mb-0">
+            John Doe: Great service, very professional! Highly recommended.
+          </p>
+        </div>
+        <div class="d-flex">
+          <span class="me-2">★★★☆☆</span>
+          <p class="mb-0">
+            Jane Smith: The service was good, but the wait time was longer than
+            expected.
+          </p>
+        </div>
+      </div>
+
+      <!-- Book Now Button -->
+      <a href="/booking/<service_id>/" class="btn btn-success btn-lg mt-3"
+        >Book Now</a
+      >
+    </div>
+  </div>
+</div>
+{% endblock %}

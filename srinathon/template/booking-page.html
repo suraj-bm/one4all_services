@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Booking & Calendar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100">
+    <div class="container mx-auto px-4 py-8">
+      <!-- Header -->
+      <h1 class="text-4xl font-bold text-blue-600 text-center mb-6">
+        Manage Your Bookings
+      </h1>
+
+      <!-- Tabs Navigation -->
+      <div class="flex justify-center mb-6">
+        <button
+          onclick="showSection('booking-form')"
+          class="px-4 py-2 bg-blue-500 text-white rounded-l-lg hover:bg-blue-600"
+        >
+          Book Service
+        </button>
+        <button
+          onclick="showSection('booking-confirmation')"
+          class="px-4 py-2 bg-blue-500 text-white hover:bg-blue-600"
+        >
+          Confirmation
+        </button>
+        <button
+          onclick="showSection('provider-calendar')"
+          class="px-4 py-2 bg-blue-500 text-white rounded-r-lg hover:bg-blue-600"
+        >
+          Calendar
+        </button>
+      </div>
+
+      <!-- Booking Form Section -->
+      <div id="booking-form" class="bg-white shadow-md rounded-lg p-6">
+        <h2 class="text-2xl font-semibold text-gray-800 mb-4">
+          Book Your Service
+        </h2>
+        <form action="/confirm-booking/" method="POST">
+          <div class="mb-4">
+            <label for="service" class="block text-gray-700 font-semibold"
+              >Service</label
+            >
+            <input
+              type="text"
+              id="service"
+              name="service"
+              placeholder="Selected Service"
+              class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
+              readonly
+            />
+          </div>
+          <div class="mb-4">
+            <label for="date" class="block text-gray-700 font-semibold"
+              >Preferred Date</label
+            >
+            <input
+              type="date"
+              id="date"
+              name="date"
+              class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
+            />
+          </div>
+          <div class="mb-4">
+            <label for="time" class="block text-gray-700 font-semibold"
+              >Preferred Time</label
+            >
+            <input
+              type="time"
+              id="time"
+              name="time"
+              class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
+            />
+          </div>
+          <div class="mb-4">
+            <label for="address" class="block text-gray-700 font-semibold"
+              >Address</label
+            >
+            <textarea
+              id="address"
+              name="address"
+              rows="3"
+              class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
+            ></textarea>
+          </div>
+          <div class="text-center">
+            <button
+              type="submit"
+              class="bg-blue-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-700"
+            >
+              Confirm Booking
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Booking Confirmation Section -->
+      <div
+        id="booking-confirmation"
+        class="hidden bg-white shadow-md rounded-lg p-6"
+      >
+        <h2 class="text-2xl font-semibold text-gray-800 mb-4">
+          Booking Confirmation
+        </h2>
+        <p class="text-gray-700">Thank you for booking with us!</p>
+        <ul class="mt-4">
+          <li><strong>Service:</strong> Electrical Repair</li>
+          <li><strong>Date:</strong> 2024-12-15</li>
+          <li><strong>Time:</strong> 10:00 AM</li>
+          <li><strong>Address:</strong> 123 Main Street</li>
+        </ul>
+        <div class="text-center mt-6">
+          <a
+            href="/customer_dashboard"
+            class="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600"
+            >Go to Dashboard</a
+          >
+        </div>
+      </div>
+
+      <!-- Service Provider Calendar Section -->
+      <div
+        id="provider-calendar"
+        class="hidden bg-white shadow-md rounded-lg p-6"
+      >
+        <h2 class="text-2xl font-semibold text-gray-800 mb-4">Your Calendar</h2>
+        <div class="bg-gray-100 border p-4 rounded-lg">
+          <p class="text-gray-700">No appointments scheduled for today.</p>
+        </div>
+        <div class="mt-6">
+          <h3 class="text-lg font-semibold text-gray-800">
+            Upcoming Appointments
+          </h3>
+          <ul class="list-disc pl-6 mt-2 text-gray-700">
+            <li>2024-12-16: Plumbing Service - 2:00 PM</li>
+            <li>2024-12-17: Pest Control - 10:00 AM</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function showSection(sectionId) {
+        document.getElementById("booking-form").classList.add("hidden");
+        document.getElementById("booking-confirmation").classList.add("hidden");
+        document.getElementById("provider-calendar").classList.add("hidden");
+        document.getElementById(sectionId).classList.remove("hidden");
+      }
+    </script>
+  </body>
+</html>

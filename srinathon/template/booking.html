@@ -1,0 +1,88 @@
+{% extends 'base.html' %} {% block content %}
+<div class="container mt-5">
+  <h2 class="display-4 text-center mb-5">Book Service</h2>
+
+  <form action="/my-bookings/" method="POST">
+    <div class="row">
+      <div class="col-md-6">
+        <!-- Select Date -->
+        <div class="mb-3">
+          <label for="booking-date" class="form-label">Select Date</label>
+          <input
+            type="date"
+            class="form-control"
+            id="booking-date"
+            name="booking_date"
+            required
+          />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <!-- Select Time -->
+        <div class="mb-3">
+          <label for="booking-time" class="form-label">Select Time</label>
+          <input
+            type="time"
+            class="form-control"
+            id="booking-time"
+            name="booking_time"
+            required
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Additional Details -->
+    <div class="mb-3">
+      <label for="additional-details" class="form-label"
+        >Additional Details</label
+      >
+      <textarea
+        class="form-control"
+        id="additional-details"
+        name="additional_details"
+        rows="4"
+        placeholder="Any special requests or additional details?"
+        required
+      ></textarea>
+    </div>
+
+    <!-- Customer Contact Info -->
+    <div class="row">
+      <div class="col-md-6">
+        <div class="mb-3">
+          <label for="customer-name" class="form-label">Your Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="customer-name"
+            name="customer_name"
+            required
+          />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="mb-3">
+          <label for="customer-phone" class="form-label"
+            >Your Phone Number</label
+          >
+          <input
+            type="tel"
+            class="form-control"
+            id="customer-phone"
+            name="customer_phone"
+            required
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <div class="d-flex justify-content-center">
+      <button type="submit" class="btn btn-success btn-lg">
+        Confirm Booking
+      </button>
+    </div>
+  </form>
+</div>
+{% endblock %}
